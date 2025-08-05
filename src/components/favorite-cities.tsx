@@ -46,11 +46,11 @@ const FavoriteCityTablet = ({
   onRemove,
 }: FavoriteCityTabletProps) => {
   const navigate = useNavigate();
-  const { data: weather, isloading } = useWeatherQuery({ lat, lon });
+  const { data: weather, isLoading } = useWeatherQuery({ lat, lon });
 
   return (
     <div
-      onClick={() => navigate(`/city/$n{name}?lat=${lat}&lon=${lon}`)}
+      onClick={() => navigate(`/city/${name}?lat=${lat}&lon=${lon}`)}
       role="button"
       tabIndex={0}
       className="relative flex min-w-[250px] cursor-pointer items-center gap-3 rounded-lg border bg-card p-4 pr-8 shadow-sm transition-all hover:shadow-md "
@@ -68,7 +68,7 @@ const FavoriteCityTablet = ({
         <X className="h-4 w-4" />
       </Button>
 
-      {isloading ? (
+      {isLoading ? (
         <div className="flex h-8 items-center justify-center">
           <Loader2 className="h-4 w-4 animate-spin" />
         </div>
